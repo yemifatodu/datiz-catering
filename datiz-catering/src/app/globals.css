@@ -1,0 +1,32 @@
+@import "tailwindcss";
+@theme inline {
+  --color-datiz-teal: #082B1E;
+  --color-datiz-gold: #C8A96E;
+  --color-datiz-ivory: #F5EFE4;
+  --font-serif: var(--font-playfair);
+  --font-sans: var(--font-inter);
+}
+@layer base {
+  body {
+    @apply bg-datiz-teal text-datiz-ivory;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+@layer components {
+  .btn-primary {
+    @apply bg-datiz-gold text-datiz-teal font-semibold px-8 py-3 hover:bg-datiz-ivory transition-colors duration-300 uppercase tracking-widest text-sm;
+  }
+  .btn-outline {
+    @apply border border-datiz-gold text-datiz-gold px-8 py-3 hover:bg-datiz-gold hover:text-datiz-teal transition-colors duration-300 uppercase tracking-widest text-sm;
+  }
+}
+/* Elegant Fade-in Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up { animation: fadeInUp 1s ease-out forwards; }
+.animate-delay-200 { animation-delay: 0.2s; opacity: 0; }
+.animate-delay-400 { animation-delay: 0.4s; opacity: 0; }
