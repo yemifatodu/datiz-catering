@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Link from "next/link";
-const services = [{ n: "01", t: "Event Planning", d: "From the first idea to the final detail." }, { n: "02", t: "Décor & Styling", d: "Settings that bring your vision to life." }, { n: "03", t: "Catering", d: "Food prepared and served for your guests." }, { n: "04", t: "Canapés", d: "Elegant bites for receptions and gatherings." }];
+const services = [{ n: "01", t: "Event Planning", d: "From the first idea to the final detail.", m: "/gallery/IMG-20261113-WA0009.jpg", v: false }, { n: "02", t: "Décor & Styling", d: "Settings that bring your vision to life.", m: "/gallery/IMG-20261113-WA0000.jpg", v: false }, { n: "03", t: "Catering", d: "Food prepared and served for your guests.", m: "/gallery/IMG-20261113-WA0006.jpg", v: false }, { n: "04", t: "Canapés", d: "Elegant bites for receptions and gatherings.", m: "/gallery/VID-20261113-WA0013.mp4", v: true }];
 export default function Home() {
   return (
     <main className="min-h-screen bg-datiz-teal text-datiz-ivory">
@@ -26,7 +26,7 @@ export default function Home() {
       <section className="mx-auto max-w-6xl px-6 py-24">
         <h2 className="mb-14 text-center font-serif text-4xl text-datiz-gold md:text-5xl">What We Do</h2>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {services.map((s) => (<div key={s.n} className="border border-datiz-gold/20 p-8 transition-colors duration-300 hover:border-datiz-gold"><p className="mb-6 font-serif text-3xl text-datiz-gold/60">{s.n}</p><h3 className="mb-3 font-serif text-2xl">{s.t}</h3><p className="text-sm leading-relaxed text-datiz-ivory/70">{s.d}</p></div>))}
+          {services.map((s) => (<div key={s.n} className="group overflow-hidden border border-datiz-gold/20 transition-colors duration-300 hover:border-datiz-gold"><div className="aspect-[4/3] w-full overflow-hidden bg-black/20">{s.v ? (<video src={s.m} autoPlay muted loop playsInline className="h-full w-full object-cover"></video>) : (<img src={s.m} alt={s.t} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />)}</div><div className="p-8"><p className="mb-4 font-serif text-3xl text-datiz-gold/60">{s.n}</p><h3 className="mb-3 font-serif text-2xl">{s.t}</h3><p className="text-sm leading-relaxed text-datiz-ivory/70">{s.d}</p></div></div>))}
         </div>
       </section>
       <section className="mx-auto grid max-w-6xl items-center gap-12 px-6 pb-24 md:grid-cols-2">
@@ -36,7 +36,7 @@ export default function Home() {
           <p className="mb-8 leading-relaxed text-datiz-ivory/70">Introduction text goes here.</p>
           <Link href="/quote" className="btn-outline">Request a Quote</Link>
         </div>
-        <div className="relative aspect-[4/5] w-full overflow-hidden border border-datiz-gold/30 bg-black/20">
+        <div className="relative aspect-[4/5] w-full md:w-4/5 md:justify-self-end overflow-hidden border border-datiz-gold/30 bg-black/20">
           <div className="absolute inset-0 flex items-center justify-center text-sm uppercase tracking-[0.2em] text-datiz-ivory/40">Caterer photo</div>
           <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url(/caterer.webp)" }}></div>
         </div>
@@ -49,3 +49,4 @@ export default function Home() {
     </main>
   );
 }
+
