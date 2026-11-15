@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Link from "next/link";
-const services = [{ n: "01", t: "Event Planning", d: "From the first idea to the final detail.", m: "/gallery/IMG-20261113-WA0009.jpg", v: false }, { n: "02", t: "Décor & Styling", d: "Settings that bring your vision to life.", m: "/gallery/IMG-20261113-WA0000.jpg", v: false }, { n: "03", t: "Catering", d: "Food prepared and served for your guests.", m: "/gallery/IMG-20261113-WA0006.jpg", v: false }, { n: "04", t: "Canapés", d: "Elegant bites for receptions and gatherings.", m: "/gallery/VID-20261113-WA0013.mp4", v: true }];
+const services = [{ n: "01", t: "Event Planning", d: "From the first idea to the final detail.", m: "/gallery/IMG-20261113-WA0006.jpg", v: false }, { n: "02", t: "Décor & Styling", d: "Settings that bring your vision to life.", m: "/gallery/IMG-20261113-WA0000.jpg", v: false }, { n: "03", t: "Catering", d: "Food prepared and served for your guests.", m: "/gallery/IMG-20261113-WA0009.jpg", v: false }, { n: "04", t: "Canapés", d: "Elegant bites for receptions and gatherings.", m: "/gallery/VID-20261113-WA0013.mp4", v: true }];
 export default function Home() {
   return (
     <main className="min-h-screen bg-datiz-teal text-datiz-ivory">
@@ -49,4 +49,5 @@ export default function Home() {
     </main>
   );
 }
+
 
